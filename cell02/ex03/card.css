@@ -1,0 +1,11 @@
+body{margin:0;display:grid;place-items:start center;gap:12px;background:#f3f4f6;font:16px/1.5 system-ui,Arial}
+.card{width:min(340px,92vw);background:#fff;border:1px solid #e6e6e6;border-radius:14px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);overflow:hidden;text-align:center}
+.avatar{width:100%;display:block}
+.meta{width:100%;border-collapse:collapse;margin:.6rem 0 0}
+.meta td{border:0;padding:.3rem .8rem}
+.login{font-weight:700;font-size:1.25rem}
+.desc,.extra{color:#666}
+.social{display:flex;justify-content:center;gap:.7rem;padding:.5rem 0 .8rem}
+.social svg{width:18px;height:18px}
+.btn{display:block;background:#111;color:#fff;text-decoration:none;padding:.7rem 1rem;border-top:1px solid #e6e6e6}

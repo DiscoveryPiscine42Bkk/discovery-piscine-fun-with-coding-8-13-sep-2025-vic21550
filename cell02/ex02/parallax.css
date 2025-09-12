@@ -1,0 +1,19 @@
+*{box-sizing:border-box;margin:0}
+section{min-height:100vh;display:grid;place-items:center;text-align:center}
+
+.hero{
+  color:#fff;
+  background-position:center;
+  background-size:cover;
+  background-attachment:fixed; /* หลักของ parallax */
+}
+.first{background-image:url("https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=1600&q=60")}
+.last {background-image:url("https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=60")}
+
+.badge{background:rgba(0,0,0,.35);padding:.8rem 1.1rem;border-radius:12px}
+.block{min-height:40vh;background:#000;color:#fff;font:18px/1.5 system-ui,Segoe UI,Arial,sans-serif}
+
+/* บางมือถือไม่รองรับ fixed: ให้ fallback เลื่อนได้ลื่น */
+@media (max-width:768px){
+  .hero{background-attachment:scroll}
+}

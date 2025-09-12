@@ -1,0 +1,6 @@
+html,body{margin:0;height:100%}
+table{width:100vw;height:100vh;border-collapse:collapse;table-layout:fixed}
+td{width:50%;border:2px solid #666;padding:1rem;vertical-align:middle;
+    font-size:clamp(14px,2.8vw,28px)}
+.first{background:#a8be63}
+.second{background:#f3b7a7}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>It's over 9000</title>
+  <style>
+    html,body{height:100%;margin:0}
+    body{display:grid;place-items:center;background:#f7f7f7;font:16px/1.4 system-ui,Segoe UI,Arial}
+    form{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;
+         background:#fff;padding:1rem;border:1px solid #ddd;border-radius:12px;
+         box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    input[type="text"]{width:7rem;padding:.5rem .6rem;border:1px solid #bbb;border-radius:8px}
+    select,input[type="submit"]{padding:.5rem .6rem;border:1px solid #bbb;border-radius:8px;background:#f0f0f0}
+    input[type="submit"]{cursor:pointer;font-weight:600}
+  </style>
+</head>
+<body>
+  <form id="calc">
+    <input id="left"  type="text" placeholder="0" inputmode="numeric" pattern="[0-9]+" />
+    <select id="op" aria-label="operator">
+      <option>+</option><option>-</option><option>*</option>
+      <option>/</option><option>%</option>
+    </select>
+    <input id="right" type="text" placeholder="0" inputmode="numeric" pattern="[0-9]+" />
+    <input type="submit" value="Try me!" />
+  </form>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const form = $('calc'), L = $('left'), R = $('right'), OP = $('op');
+    const isInt = v => /^\d+$/.test(v);             // อนุญาตเฉพาะเลขจำนวนเต็มบวก (รวม 0)
+
+    // แจ้งเตือนทุก 30 วินาที
+    setInterval(() => alert('Please, use me...'), 30000);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const aStr = L.value.trim(), bStr = R.value.trim();
+      if (!isInt(aStr) || !isInt(bStr)) { alert('Error :('); return; }
+
+      const a = parseInt(aStr, 10), b = parseInt(bStr, 10), op = OP.value;
+
+      // หาร/โมดูลัส ด้วยศูนย์
+      if ((op === '/' || op === '%') && b === 0) {
+        console.log("It's over 9000!");
+        alert("It's over 9000!");
+        return;
+      }
+
+      let res;
+      switch (op) {
+        case '+': res = a + b; break;
+        case '-': res = a - b; break;
+        case '*': res = a * b; break;
+        case '/': res = a / b; break;
+        case '%': res = a % b; break;
+      }
+
+      console.log(res);
+      alert(res);
+    });
+  </script>
+</body>
+</html>

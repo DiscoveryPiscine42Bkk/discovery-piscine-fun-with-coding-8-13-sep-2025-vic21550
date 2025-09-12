@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To do or not to do</title>
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;
+         background:#f6f6f6;font:16px/1.4 system-ui,Segoe UI,Arial}
+    .wrap{background:#fff;border:1px solid #ddd;border-radius:12px;
+          padding:1rem;box-shadow:0 10px 24px rgba(0,0,0,.08);width:min(540px,92vw)}
+    #controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+    #new{padding:.5rem .8rem;border:1px solid #bbb;border-radius:8px;background:#f2f2f2;cursor:pointer}
+    #ft_list{display:flex;flex-direction:column-reverse;gap:.5rem} /* แสดงตัวล่าสุดไว้บนสุด */
+    .todo{padding:.6rem .75rem;border:1px solid #cfcfcf;border-radius:8px;background:#fafafa;cursor:pointer}
+    .todo:hover{background:#f0f0f0}
+    small{color:#666}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="controls">
+      <h2 style="margin:0">TODOs</h2>
+      <button id="new" type="button">New</button>
+    </div>
+    <small>คลิกที่รายการเพื่อ ลบ (มี confirm)</small>
+    <div id="ft_list"></div>
+  </div>
+
+  <script src="todo.js" defer></script>
+</body>
+</html>
